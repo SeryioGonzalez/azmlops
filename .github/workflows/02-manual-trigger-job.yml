@@ -3,6 +3,10 @@ name: Manually trigger an Azure Machine Learning job
 on:
   workflow_dispatch:
 
+env:
+  AZ_ML_WORKSPACE_NAME: sergioml_mlworkspace
+  RG_NAME: sergioml
+
 jobs:
   train:
     runs-on: ubuntu-latest
@@ -15,5 +19,7 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-
+    - name: Trigger Azure Machine Learning job
+      run: |
+        az ml job create -g $RG_NAME --workspace-name $AZ_ML_WORKSPACE_NAME --file src/job.yml
 
