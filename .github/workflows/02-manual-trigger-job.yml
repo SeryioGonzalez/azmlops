@@ -1,4 +1,4 @@
-name: Manually trigger an Azure Machine Learning job with github actions
+name: Manually trigger an Azure Machine Learning job with github
 
 on:
   workflow_dispatch:
