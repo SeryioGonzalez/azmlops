@@ -10,7 +10,6 @@ import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-test_size_ratio = 0.3
 
 # define functions
 def main(args):
@@ -38,9 +37,20 @@ def get_csvs_df(path):
 
 # TO DO: add function to split data
 def split_data(dataframe):
-    X, y = dataframe[['Pregnancies','PlasmaGlucose','DiastolicBloodPressure','TricepsThickness','SerumInsulin','BMI','DiabetesPedigree','Age']].values, dataframe['Diabetic'].values
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size_ratio, random_state=0)
+    X = dataframe[[
+                   'Pregnancies',
+                   'PlasmaGlucose',
+                   'DiastolicBloodPressure',
+                   'TricepsThickness',
+                   'SerumInsulin',
+                   'BMI',
+                   'DiabetesPedigree',
+                   'Age'
+                   ]].values
+    y = dataframe['Diabetic'].values
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
     return X_train, X_test, y_train, y_test
+
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
@@ -62,6 +72,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
