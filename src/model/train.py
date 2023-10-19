@@ -40,13 +40,13 @@ def get_csvs_df(path):
 # TO DO: add function to split data
 def split_data(dataframe):
     X = dataframe[[
-                    'Pregnancies', 
-                   'PlasmaGlucose', 
-                   'DiastolicBloodPressure', 
-                   'TricepsThickness', 
-                   'SerumInsulin', 
-                   'BMI', 
-                   'DiabetesPedigree', 
+                   'Pregnancies',
+                   'PlasmaGlucose',
+                   'DiastolicBloodPressure',
+                   'TricepsThickness',
+                   'SerumInsulin',
+                   'BMI',
+                   'DiabetesPedigree',
                    'Age'
                    ]].values
     y = dataframe['Diabetic'].values
