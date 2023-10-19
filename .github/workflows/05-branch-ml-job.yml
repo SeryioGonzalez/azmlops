@@ -46,5 +46,5 @@ jobs:
         az ml compute create -g $RG_NAME --workspace-name $AZ_ML_WORKSPACE_NAME --name automated --size $COMPUTE_INSTANCE_SIZE --type ComputeInstance
     - name: Trigger Azure Machine Learning job
       run: |
-        az ml job create -g $RG_NAME --workspace-name $AZ_ML_WORKSPACE_NAME --file src/job.yml --set inputs.diabetes.path="azureml:diabetes-prod-folder:1"
+        az ml job create -g $RG_NAME --workspace-name $AZ_ML_WORKSPACE_NAME --file src/job.yml --set inputs.diabetes.path="azureml:diabetes-prod-folder:2"
 
