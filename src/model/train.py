@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     # parse args
     args = parse_args()
-
+    logging.debug(f"Args {args}")
     # run main function
     main(args)
 
