@@ -1,0 +1,12 @@
+name: Trigger when there is a pull request
+
+on:
+  pull_request:
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Placeholder
+      run: |
+        echo "Check it is working"
