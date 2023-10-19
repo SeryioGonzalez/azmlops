@@ -22,7 +22,7 @@ jobs:
         flake8 src/model/
     - name: Install pytest
       run: |
-        pip install pytest 
+        pip install pytest mlflow
     - name: Run pytest
       run: |
         pytest tests/test_train.py 
