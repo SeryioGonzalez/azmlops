@@ -1,4 +1,6 @@
 from model.train import get_csvs_df
+
+import mlflow
 import os
 import pytest
 
