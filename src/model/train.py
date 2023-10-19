@@ -2,10 +2,10 @@
 
 import argparse
 import glob
+import logging
 import mlflow
-import os
-
 import pandas as pd
+import os
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -66,15 +66,15 @@ def parse_args():
 # run script
 if __name__ == "__main__":
     # add space in logs
-    print("\n\n")
-    print("*" * 60)
+    logging.info("\n\n")
+    logging.info("*" * 60)
 
     # parse args
     args = parse_args()
-
+    logging.debug(f"Args {args}")
     # run main function
     main(args)
 
     # add space in logs
-    print("*" * 60)
-    print("\n\n")
+    logging.info("*" * 60)
+    logging.info("\n\n")
