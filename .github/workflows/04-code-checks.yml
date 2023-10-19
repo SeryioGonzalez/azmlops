@@ -20,5 +20,9 @@ jobs:
     - name: Run linting tests
       run: | 
         flake8 src/model/
-
-
+    - name: Install pytest
+      run: |
+        pip install pytest 
+    - name: Run pytest
+      run: |
+        pytest tests/test_train.py 
